@@ -1,0 +1,36 @@
+{
+    "name": "mauchede/atoum-phpci-plugin",
+    "type": "library",
+    "description": "PHPCI plugin for Atoum integration",
+    "keywords": [
+        "phpci",
+        "plugin",
+        "atoum"
+    ],
+    "homepage": "http://github.com/mauchede/atoum-phpci-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Morgan Auchede",
+            "email": "morgan.auchede@gmail.com",
+            "homepage": "http://github.com/mauchede"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mauchede\\PHPCI\\Plugin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mauchede\\PHPCI\\Plugin\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require-dev": {
+        "block8/phpci": "^1.7",
+        "phpunit/phpunit": "^4.0||^5.0"
+    }
+}

@@ -1,0 +1,5 @@
+1..2
+ok 1
+# Tests\Units\Model\Document::testAddContent()
+ok 2
+# Tests\Units\Model\Document::testGetUri()

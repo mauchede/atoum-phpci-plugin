@@ -1,0 +1,12 @@
+1..2
+not ok 1 - Tests\Units\Model\Atoum::testGetUri()
+# array(2) does not contain string(3) 'foo'
+# /home/mauchede/Workspace/mauchede/atoum-phpci-plugin/tests/Tests/Units/Model/Atoum.php:33
+not ok 2 - Tests\Units\Model\Atoum::testAddContent()
+# strings are not equal
+# -Expected
+# +Actual
+# @@ -1 +1 @@
+# -string(3) "foo"
+# +string(3) "bar"
+# /home/mauchede/Workspace/mauchede/atoum-phpci-plugin/tests/Tests/Units/Model/Atoum.php:19
