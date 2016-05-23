@@ -16,6 +16,11 @@ class AtoumTest extends \PHPUnit_Framework_TestCase
     private $build;
 
     /**
+     * @var string
+     */
+    private $initialFolder;
+
+    /**
      * @var \PHPUnit_Framework_MockObject_MockObject
      */
     private $logger;
@@ -26,7 +31,7 @@ class AtoumTest extends \PHPUnit_Framework_TestCase
     private $phpci;
 
     /**
-     * Tests the plugin.
+     * Tests the plugin with invalid tests.
      */
     public function testExecuteWithInvalidTests()
     {
@@ -82,6 +87,7 @@ class AtoumTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertFalse($plugin->execute());
+        $this->assertEquals($this->initialFolder, getcwd());
     }
 
     /**
@@ -105,6 +111,7 @@ class AtoumTest extends \PHPUnit_Framework_TestCase
             );
 
         $this->assertFalse($plugin->execute());
+        $this->assertEquals($this->initialFolder, getcwd());
     }
 
     /**
@@ -142,6 +149,7 @@ class AtoumTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertTrue($plugin->execute());
+        $this->assertEquals($this->initialFolder, getcwd());
     }
 
     /**
@@ -150,6 +158,7 @@ class AtoumTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->build = $this->getMock(Build::class);
+        $this->initialFolder = getcwd();
         $this->logger = $this->getMock(LoggerInterface::class);
 
         $this->phpci = $this
