@@ -5,9 +5,10 @@ namespace Mauchede\PHPCI\Plugin;
 use PHPCI\Builder;
 use PHPCI\Model\Build;
 use PHPCI\Model\BuildError;
+use PHPCI\Plugin;
 use PHPCI\Plugin\Util\TapParser;
 
-class Atoum implements \PHPCI\Plugin
+class Atoum implements Plugin
 {
     /**
      * @var Build
@@ -51,10 +52,12 @@ class Atoum implements \PHPCI\Plugin
      */
     public function execute()
     {
+        $curdir = getcwd();
         chdir($this->phpci->buildPath);
 
         if (!is_file($this->configFile)) {
             $this->phpci->logFailure(sprintf('The Atoum config file "%s" is missing.', $this->configFile));
+            chdir($curdir);
 
             return false;
         }
@@ -78,6 +81,8 @@ class Atoum implements \PHPCI\Plugin
             $status = false;
             $this->phpci->logFailure('Impossible to parse the Atoum output.', $exception);
         }
+
+        chdir($curdir);
 
         return $status;
     }
