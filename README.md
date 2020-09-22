@@ -2,6 +2,8 @@
 
 Atoum PHPCI Plugin gives the possibility to run test with [Atoum](https://github.com/atoum/atoum) in [PHPCI](https://www.phptesting.org/).
 
+⚠️ This project is no longer maintained. ⚠️
+
 ## Installation
 
 This plugin can be installed via [composer](https://getcomposer.org/):
@@ -22,14 +24,6 @@ test:
     \Mauchede\PHPCI\Plugin\Atoum:
         config: atoum.config.file
 ```
-
-## Contributing
-
-1. Fork it.
-2. Create your branch: `git checkout -b my-new-feature`.
-3. Commit your changes: `git commit -am 'Add some feature'`.
-4. Push to the branch: `git push origin my-new-feature`.
-5. Submit a pull request.
 
 ## Links
 
